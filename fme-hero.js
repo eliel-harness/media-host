@@ -1,4 +1,5 @@
 <script>
+  console.log('fme-hero.js script has loaded');
 function initializeRiveAnimation(canvasId, riveFileUrl, artboardName, stateMachineNames) {
   const canvas = document.getElementById(canvasId);
 
