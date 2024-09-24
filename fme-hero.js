@@ -27,26 +27,26 @@ function initializeRiveAnimation(canvasId, riveFileUrl, artboardName, stateMachi
   });
 }
 
-  // Function to wait for canvas elements to be in the DOM and then initialize
-  function waitForCanvasAndInitialize(canvasId, riveFileUrl, artboardName, stateMachineNames) {
-    const initializeIfCanvasExists = () => {
-      const canvas = document.getElementById(canvasId);
-      if (canvas) {
-        initializeRiveAnimation(canvasId, riveFileUrl, artboardName, stateMachineNames);
-      } else {
-        requestAnimationFrame(initializeIfCanvasExists);
-      }
-    };
-    initializeIfCanvasExists();
-  }
+// Function to wait for canvas elements to be in the DOM and then initialize
+function waitForCanvasAndInitialize(canvasId, riveFileUrl, artboardName, stateMachineNames) {
+  const initializeIfCanvasExists = () => {
+    const canvas = document.getElementById(canvasId);
+    if (canvas) {
+      initializeRiveAnimation(canvasId, riveFileUrl, artboardName, stateMachineNames);
+    } else {
+      requestAnimationFrame(initializeIfCanvasExists);
+    }
+  };
+  initializeIfCanvasExists();
+}
 
-  // Initialization calls for each animation
+// Initialization calls for each animation
 
-  // Initialize Security animation
-  waitForCanvasAndInitialize(
-    "fme-hero",
-    "https://cms.harness.io/riv/fme-main.riv",
-    "ff-dark",
-    ["SM"]
-  );
+// Initialize the animation
+waitForCanvasAndInitialize(
+  "fme-hero",
+  "https://cms.harness.io/riv/fme-main.riv",
+  "ff-dark",
+  ["SM"]
+);
 </script>
